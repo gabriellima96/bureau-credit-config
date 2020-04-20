@@ -2,8 +2,6 @@ server:
   port: 8081
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
@@ -16,8 +14,7 @@ security:
       
 spring:
   datasource:
-    hostname: localhost
-    url: jdbc:mysql://${spring.datasource.hostname}:3306/basea?verifyServerCertificate=false&useSSL=false&requireSSL=false
+    url: jdbc:mysql://${datasource.hostname}:3306/basea?verifyServerCertificate=false&useSSL=false&requireSSL=false
     username: root
     password: basea
   jpa:
