@@ -16,7 +16,8 @@ security:
       
 spring:
   datasource:
-    url: jdbc:mysql://mysql:3306/basea?verifyServerCertificate=false&useSSL=false&requireSSL=false
+    hostname: localhost
+    url: jdbc:mysql://${spring.datasource.hostname}:3306/basea?verifyServerCertificate=false&useSSL=false&requireSSL=false
     username: root
     password: basea
   jpa:
