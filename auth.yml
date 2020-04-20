@@ -2,8 +2,6 @@ server:
   port: 8084
 
 eureka:
-  instance:
-    hostname: server
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
