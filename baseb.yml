@@ -12,7 +12,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:8084/user
-      id: basea
+      id: baseb
       
 spring:
   data:
