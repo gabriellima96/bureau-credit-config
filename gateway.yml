@@ -4,8 +4,6 @@ server:
     context-path: /api
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
@@ -13,7 +11,7 @@ eureka:
 security:
   oauth2:
     resource:
-      userInfoUri: http://localhost:8084/user
+      userInfoUri: http://${security.oauth2.resource.hostname}:8084/user
       id: gateway
 
 zuul:
@@ -21,4 +19,4 @@ zuul:
   routes:
     oauth:
       path: /oauth/**
-      url: http://localhost:8084/oauth
+      url: http://${security.oauth2.resource.hostname}:8084/oauth
