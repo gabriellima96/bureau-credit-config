@@ -8,6 +8,12 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
       
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:8084/user
+      id: basea
+      
 spring:
   data:
     mongodb:
