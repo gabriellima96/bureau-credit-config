@@ -2,8 +2,6 @@ server:
   port: 8082
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
@@ -11,12 +9,11 @@ eureka:
 security:
   oauth2:
     resource:
-      userInfoUri: http://localhost:8084/user
+      userInfoUri: http://${security.oauth2.resource.hostname}:8084/user
       id: baseb
       
 spring:
   data:
     mongodb:
-      host: localhost
       port: 27017
       database: baseb
