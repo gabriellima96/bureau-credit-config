@@ -9,3 +9,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
+      
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:8084/user
+      id: gateway
+
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    oauth:
+      path: /oauth/**
+      url: http://localhost:8084/oauth
